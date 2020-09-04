@@ -1,0 +1,7 @@
+<configuration debug="false" scan="false">
+
+    <property scope="context" resource="application.properties" />
+    <springProperty scope="context" name="logback.profile" source="logback.profile"/>
+    <include resource="pom/cross/commons/logging/logback-access.xml" />
+
+</configuration>

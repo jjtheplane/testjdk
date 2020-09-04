@@ -1,0 +1,968 @@
+{
+	"info": {
+		"_postman_id": "c12310c0-545f-474c-bdf2-8a71bf15091e",
+		"name": "pom-people-customer-information-receiver-v2",
+		"description": "Microservicio encargado de retornar los datos filiatorios de una persona/cliente del banco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener datos filiatorios",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6d537957-ccbe-4d98-b995-e9b07ade25ee",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id_channel",
+						"value": "onb",
+						"type": "text",
+						"description": "Canal de origen"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/v2/pom/people/:id_host_adhesion/data",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v2",
+						"pom",
+						"people",
+						":id_host_adhesion",
+						"data"
+					],
+					"variable": [
+						{
+							"key": "id_host_adhesion",
+							"value": "1400|333322",
+							"type": "string",
+							"description": "id_host|id_adhesion"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error: cliente no existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"value": "onb",
+								"type": "text",
+								"description": "Canal de origen"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/pom/people/:id_host_adhesion/data",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pom",
+								"people",
+								":id_host_adhesion",
+								"data"
+							],
+							"variable": [
+								{
+									"key": "id_host_adhesion",
+									"value": "100|3333",
+									"description": "id_host|id_adhesion"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "id_host_adhesion",
+							"value": "1003333"
+						},
+						{
+							"key": "id_adhesion",
+							"value": "3333"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2019 16:42:53 GMT"
+						},
+						{
+							"key": "operationName",
+							"value": "ObtenerCliente"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "id_host",
+							"value": "100"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-customer-information-receiver:dev:8080"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v1/pom/people/100|3333/data\"\n    },\n    \"data\": [],\n    \"errors\": [\n        {\n            \"code\": \"21\",\n            \"detail\": \"Incorrect client request to NV\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"value": "onb",
+								"type": "text",
+								"description": "Canal de origen"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v2/pom/people/:id_host_adhesion/data",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"pom",
+								"people",
+								":id_host_adhesion",
+								"data"
+							],
+							"variable": [
+								{
+									"key": "id_host_adhesion",
+									"value": "1400|3333",
+									"description": "id_host|id_adhesion"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Aug 2019 21:42:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-customer-information-receiver:dev:8080"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v2/pom/people/1400|3333/data\",\n        \"paging\": {}\n    },\n    \"data\": [\n        {\n            \"id_host\": \"1400\",\n            \"id_pom_persona\": \"0004550610M20190825184213166\",\n            \"go_user_number\": null,\n            \"name\": \"ANGEL OSCAR\",\n            \"lastname\": \"JULIO\",\n            \"gender\": \"M\",\n            \"documents\": [\n                {\n                    \"document_number\": \"0004550610\",\n                    \"type\": \"LE\",\n                    \"provider\": null\n                },\n                {\n                    \"document_number\": \"0005635664\",\n                    \"type\": \"CI\",\n                    \"provider\": \"001\"\n                }\n            ],\n            \"employee_BGBA_code\": \"NE\",\n            \"address\": null,\n            \"phones\": [\n                {\n                    \"mobile\": false,\n                    \"country_code\": \"\",\n                    \"area_code\": \"11\",\n                    \"number\": \"4803-5271\"\n                }\n            ],\n            \"emails\": null,\n            \"segment_code\": \"002110090\",\n            \"main_location\": {\n                \"number\": 86,\n                \"code\": \"SUCA\"\n            },\n            \"company_list\": null,\n            \"id_adhesion\": \"0000000069\"\n        }\n    ],\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Consultar datos por id_pom",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "id_channel",
+						"value": "onlinebanking",
+						"type": "text",
+						"description": "Canal de origen"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/v1/pom/people/:id_pom/data?from=pom",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pom",
+						"people",
+						":id_pom",
+						"data"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "pom",
+							"description": "Valor fijo cuando se consulta por un id_pom"
+						}
+					],
+					"variable": [
+						{
+							"key": "id_pom",
+							"value": "0004550610M20191128154205223",
+							"type": "string",
+							"description": "id_pom de la persona a consultar"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"value": "OnB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v2/pom/people/:id_pom/data?from=pom",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"pom",
+								"people",
+								":id_pom",
+								"data"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "pom",
+									"description": "Valor fijo cuando se consulta por un id_pom"
+								}
+							],
+							"variable": [
+								{
+									"key": "id_pom",
+									"value": "0004550610M20190806150241191",
+									"type": "string",
+									"description": "id_pom de la persona a consultar"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2019 16:43:37 GMT"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-customer-information-receiver:dev:8080"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v2/pom/people/0004550610M20190806150241191/data?from=pom\",\n        \"paging\": {}\n    },\n    \"data\": [\n        {\n            \"id_host\": \"1400\",\n            \"id_pom_persona\": \"0004550610M20190806150241191\",\n            \"go_user_number\": null,\n            \"name\": \"ANGEL OSCAR\",\n            \"lastname\": \"JULIO\",\n            \"gender\": \"M\",\n            \"documents\": [\n                {\n                    \"document_number\": \"0004550610\",\n                    \"type\": \"LE\",\n                    \"provider\": null\n                },\n                {\n                    \"document_number\": \"0005635664\",\n                    \"type\": \"CI\",\n                    \"provider\": \"001\"\n                }\n            ],\n            \"employee_BGBA_code\": \"NE\",\n            \"address\": null,\n            \"phones\": [\n                {\n                    \"mobile\": false,\n                    \"country_code\": \"\",\n                    \"area_code\": \"11\",\n                    \"number\": \"4803-5271\"\n                }\n            ],\n            \"emails\": null,\n            \"segment_code\": \"002110090\",\n            \"main_location\": {\n                \"number\": 86,\n                \"code\": \"SUCA\"\n            },\n            \"company_list\": null\n        }\n    ],\n    \"errors\": []\n}"
+				},
+				{
+					"name": "Cliente inexistente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"value": "OnB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v2/pom/people/:id_pom/data?from=pom",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"pom",
+								"people",
+								":id_pom",
+								"data"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "pom",
+									"description": "Valor fijo cuando se consulta por un id_pom"
+								}
+							],
+							"variable": [
+								{
+									"key": "id_pom",
+									"value": "0004550610M20190825184213162",
+									"type": "string",
+									"description": "id_pom de la persona a consultar"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Accept-Encoding",
+							"value": "gzip, deflate"
+						},
+						{
+							"key": "id_channel",
+							"value": "OnB"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "id",
+							"value": "0004550610M20190825184213162"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Aug 2019 21:43:25 GMT"
+						},
+						{
+							"key": "id_pom_person",
+							"value": "0004550610M20190825184213162"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "from",
+							"value": "pom"
+						},
+						{
+							"key": "X-Forwarded-Port",
+							"value": "443"
+						},
+						{
+							"key": "X-Forwarded-For",
+							"value": "10.8.1.20"
+						},
+						{
+							"key": "id_pom",
+							"value": "0004550610M20190825184213162"
+						},
+						{
+							"key": "Cookie",
+							"value": "0663f8efb7f3ba634b80a91a39785999=2c1f715a7d0fabedaecaa2be3e78171f"
+						},
+						{
+							"key": "X-Forwarded-Host",
+							"value": "pom-people-customer-information-receiver-pope-people-dev.devcloud.bancogalicia.com.ar"
+						},
+						{
+							"key": "Accept",
+							"value": "*/*"
+						},
+						{
+							"key": "Postman-Token",
+							"value": "01df6833-4982-4197-ba37-54fa6dd844dd"
+						},
+						{
+							"key": "breadcrumbId",
+							"value": "ID-pom-people-customer-information-receiver-85-rcmcq-1566573183766-0-3647"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "User-Agent",
+							"value": "PostmanRuntime/7.16.3"
+						},
+						{
+							"key": "Forwarded",
+							"value": "for=10.0.78.198;host=pom-people-customer-information-receiver-pope-people-dev.devcloud.bancogalicia.com.ar;proto=https;proto-version="
+						},
+						{
+							"key": "X-Forwarded-Proto",
+							"value": "https"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-customer-information-receiver:dev:8080"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v2/pom/people/0004550610M20190825184213162/data?from=pom\"\n    },\n    \"data\": [],\n    \"errors\": [\n        {\n            \"code\": \"2\",\n            \"detail\": \"El cliente que intenta recuperar no existe.\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener datos filiatorios por id_host",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6d537957-ccbe-4d98-b995-e9b07ade25ee",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id_channel",
+						"value": "onb",
+						"type": "text",
+						"description": "Canal de origen"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/v2/pom/people/host/:id_host/data",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v2",
+						"pom",
+						"people",
+						"host",
+						":id_host",
+						"data"
+					],
+					"variable": [
+						{
+							"key": "id_host",
+							"value": "552",
+							"type": "string",
+							"description": "id_host del cliente a buscar"
+						}
+					]
+				},
+				"description": "Obtener datos filiatorios por id host "
+			},
+			"response": [
+				{
+					"name": "Error: Cliente inexistente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"value": "onb",
+								"type": "text",
+								"description": "Canal de origen"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v2/pom/people/host/:id_host/data",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"pom",
+								"people",
+								"host",
+								":id_host",
+								"data"
+							],
+							"variable": [
+								{
+									"key": "id_host",
+									"value": "900",
+									"type": "string",
+									"description": "id_host del cliente a buscar"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "a35435fc4cbf35fa4c49039fb2cdfd09=b8934ea15564ecd26d45bbaaab62e6d7; path=/; HttpOnly"
+						},
+						{
+							"key": "id_host_adhesion",
+							"value": "9000000000000"
+						},
+						{
+							"key": "ResponseContext",
+							"value": "{org.apache.cxf.message.Message.PROTOCOL_HEADERS={Content-Length=[799], content-type=[text/xml; charset=utf-8], Date=[Sun, 25 Aug 2019 21:51:46 GMT]}, org.apache.cxf.transport.Conduit=conduit: class org.apache.cxf.transport.http.URLConnectionHTTPConduit379058538target: http://desaosb.bancogalicia.com.ar:8003/consultacliente/5_0_1/anonimo, org.apache.cxf.service.model.MessageInfo=[MessageInfo OUTPUT: {http://ws.bancogalicia.com.ar/webservices/abmcinfoclientes/consultacliente/5_0_0}ObtenerClienteResponse], org.apache.cxf.binding.soap.SoapVersion=org.apache.cxf.binding.soap.Soap11@509104a9, javax.xml.ws.wsdl.operation={http://ws.bancogalicia.com.ar/webservices/abmcinfoclientes/consultacliente/5_0_0}ObtenerCliente, javax.xml.ws.wsdl.service={http://ws.bancogalicia.com.ar/webservices/abmcinfoclientes/consultacliente/5_0_0}ConsultaCliente, envelope.events=[xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"], org.apache.cxf.headers.Header.list=[], schema-validation-enabled=NONE, body.events=[], org.apache.cxf.ws.policy.AssertionInfoMap={}, org.apache.cxf.client=true, javax.xml.ws.wsdl.port={http://ws.bancogalicia.com.ar/webservices/abmcinfoclientes/consultacliente/5_0_0}ConsultaCliente, envelope.prefix=soapenv, javax.xml.ws.wsdl.interface={http://ws.bancogalicia.com.ar/webservices/abmcinfoclientes/consultacliente/5_0_0}ConsultaCliente, javax.xml.ws.wsdl.description=http://desaosb.bancogalicia.com.ar:8003/consultacliente/5_0_1/anonimo?wsdl, org.apache.cxf.message.Message.ENCODING=UTF-8, org.apache.cxf.message.inbound=true, org.apache.cxf.message.Message.RESPONSE_CODE=200, Content-Type=text/xml; charset=utf-8, body.prefix=soapenv}"
+						},
+						{
+							"key": "id_channel",
+							"value": "onb"
+						},
+						{
+							"key": "id_adhesion",
+							"value": "0000000000"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Aug 2019 21:51:46 GMT"
+						},
+						{
+							"key": "operationName",
+							"value": "ObtenerCliente"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "id_host",
+							"value": "900"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-customer-information-receiver:dev:8080"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-ctg-accession"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v2/pom/people/host/900/data\"\n    },\n    \"data\": [],\n    \"errors\": [\n        {\n            \"code\": \"21\",\n            \"detail\": \"El cliente que intenta recuperar no existe.\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"value": "onb",
+								"type": "text",
+								"description": "Canal de origen"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v2/pom/people/host/:id_host/data",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"pom",
+								"people",
+								"host",
+								":id_host",
+								"data"
+							],
+							"variable": [
+								{
+									"key": "id_host",
+									"value": "1400",
+									"type": "string",
+									"description": "id_host del cliente a buscar"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Aug 2019 21:50:27 GMT"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-customer-information-receiver:dev:8080"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v2/pom/people/host/1400/data\",\n        \"paging\": {}\n    },\n    \"data\": [\n        {\n            \"id_host\": \"1400\",\n            \"id_pom_persona\": \"0004550610M20190825185027472\",\n            \"go_user_number\": null,\n            \"name\": \"ANGEL OSCAR\",\n            \"lastname\": \"JULIO\",\n            \"gender\": \"M\",\n            \"documents\": [\n                {\n                    \"document_number\": \"0004550610\",\n                    \"type\": \"LE\",\n                    \"provider\": null\n                },\n                {\n                    \"document_number\": \"0005635664\",\n                    \"type\": \"CI\",\n                    \"provider\": \"001\"\n                }\n            ],\n            \"employee_BGBA_code\": \"NE\",\n            \"address\": null,\n            \"phones\": [\n                {\n                    \"mobile\": false,\n                    \"country_code\": \"\",\n                    \"area_code\": \"11\",\n                    \"number\": \"4803-5271\"\n                }\n            ],\n            \"emails\": null,\n            \"segment_code\": \"002110090\",\n            \"main_location\": {\n                \"number\": 86,\n                \"code\": \"SUCA\"\n            },\n            \"company_list\": null,\n            \"id_adhesion\": \"0000000069\"\n        }\n    ],\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtner datos por JWT - ONB",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6d537957-ccbe-4d98-b995-e9b07ade25ee",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id_channel",
+						"type": "text",
+						"value": "onb",
+						"description": "Canal de origen"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/v2/pom/people/retail/data",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v2",
+						"pom",
+						"people",
+						"retail",
+						"data"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"type": "text",
+								"value": "onb",
+								"description": "Canal de origen"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/pom/people/retail/data",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pom",
+								"people",
+								"retail",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Aug 2019 21:58:10 GMT"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "pom-people-customer-information-receiver:dev:8080"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v1/pom/people/retail/data\",\n        \"paging\": {}\n    },\n    \"data\": [\n        {\n            \"id_host\": \"800\",\n            \"id_pom_persona\": \"0002443702M20190825185754556\",\n            \"go_user_number\": null,\n            \"name\": \"PEDRO\",\n            \"lastname\": \"GIL\",\n            \"gender\": \"M\",\n            \"documents\": [\n                {\n                    \"document_number\": \"0002443702\",\n                    \"type\": \"LE\",\n                    \"provider\": null\n                }\n            ],\n            \"employee_BGBA_code\": \"NE\",\n            \"address\": null,\n            \"phones\": [],\n            \"emails\": null,\n            \"segment_code\": \"002110000\",\n            \"main_location\": {\n                \"number\": 999,\n                \"code\": \"SUCA\"\n            },\n            \"company_list\": null,\n            \"id_adhesion\": null\n        }\n    ],\n    \"errors\": []\n}"
+				},
+				{
+					"name": "Error de autenticacion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id_channel",
+								"type": "text",
+								"value": "onb",
+								"description": "Canal de origen"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/v1/pom/people/retail/data",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pom",
+								"people",
+								"retail",
+								"data"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Aug 2019 21:55:48 GMT"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "159"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"method\": \"GET\",\n        \"operation\": \"/v1/pom/people/retail/data\"\n    },\n    \"errors\": [\n        {\n            \"code\": \"403\",\n            \"detail\": \"Full authentication is required to access this resource\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

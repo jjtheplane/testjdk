@@ -1,0 +1,30 @@
+{
+  "dev":{
+    "authController": "http://cap-impersonal-auth-controller-poca-cap-dev.devcloud.bancogalicia.com.ar",
+    "channelToInsert": "onlinebanking",
+    "urls":{
+      "client_information": "http://pom-people-customer-information-receiver-v2-pope-people-dev.devcloud.bancogalicia.com.ar"
+    }
+  },
+  "int":{
+    "authController": "http://cap-impersonal-auth-controller-poca-cap-int.stgcloud.bancogalicia.com.ar",
+    "channelToInsert": "onlinebanking",
+    "urls":{
+      "client_information": "http://pom-people-customer-information-receiver-v2-pope-people-int.stgcloud.bancogalicia.com.ar"
+    }
+  },
+  "qas":{
+    "authController": "http://cap-impersonal-auth-controller-poca-cap-qas.stgcloud.bancogalicia.com.ar",
+    "channelToInsert": "onlinebanking",
+    "urls":{
+      "client_information": "http://pom-people-customer-information-receiver-v2-pope-people-qas.stgcloud.bancogalicia.com.ar"
+    }
+  },
+  "local":{
+    "authController": "http://cap-impersonal-auth-controller-poca-cap-qas.stgcloud.bancogalicia.com.ar",
+    "channelToInsert": "onlinebanking",
+    "urls":{
+      "client_information": "http://localhost:8080"
+    }
+  }
+}

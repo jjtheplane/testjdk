@@ -1,0 +1,175 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ar.com.bancogalicia.pom.people</groupId>
+    <artifactId>pom-people-customer-information-receiver-v2</artifactId>
+    <version>1.1.7</version>
+
+    <name>pom-people-customer-information-receiver-v2</name>
+
+    <parent>
+        <groupId>pom.cross.parents</groupId>
+        <artifactId>galicia-parent-fuse</artifactId>
+        <version>0.0.13</version>
+    </parent>
+
+    <properties>
+        <scm.url>https://github.bancogalicia.com.ar/pope-people/pom-people-customer-information-receiver-v2.git</scm.url>
+        <karate.version>0.9.1</karate.version>
+        <cucumber-reporting.version>4.1.0</cucumber-reporting.version>
+        <sonar.exclusions>
+            **/ws/**/*,
+            **/pojo/**/*
+        </sonar.exclusions>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>ar.com.bancogalicia.pom.cap</groupId>
+            <artifactId>cap-commons-filters</artifactId>
+            <version>3.0.50</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-apache</artifactId>
+            <version>${karate.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit4</artifactId>
+            <version>${karate.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>${cucumber-reporting.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test-spring</artifactId>
+            <version>2.21.3</version><!--$NO-MVN-MAN-VER$-->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+           <groupId>org.apache.camel</groupId>
+           <artifactId>camel-http</artifactId>
+            <version>2.18.3</version>
+       </dependency>
+
+      <dependency>
+           <groupId>org.apache.camel</groupId>
+           <artifactId>camel-xmljson</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>xom</groupId>
+           <artifactId>xom</artifactId>
+           <version>1.2.5</version>
+       </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-cxf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jackson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-gson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+            <exclusions>
+                <exclusion>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-broker</artifactId>
+            </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-hystrix</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <!-- <scope>test</scope> -->
+        </dependency>
+    </dependencies>
+
+   <scm>
+        <developerConnection>scm:git:${scm.url}</developerConnection>
+     <tag>HEAD</tag>
+  </scm>
+
+   <build>
+       <!-- Set the name of the JAR, used as the context root when the app is
+           deployed -->
+        <finalName>pom-people-customer-information-receiver-v2</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${jar.plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>ar.com.bancogalicia.Application</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
